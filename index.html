@@ -53,5 +53,31 @@
             font-size: 50px;
         }
     </style>
+    <script>
+        // Example JSON data (this could be fetched from an API)
+const jsonData = { 
+    "event": "Sigma", 
+    "other": "other other" 
+};
+
+// Function to update the HTML content
+function updateContent() {
+    // Here you would normally fetch data from an API
+    // For example: fetch('your-api-url').then(response => response.json()).then(data => { ... });
+
+    // Simulating the fetching of JSON data
+    const data = jsonData; // Replace this with the fetched data
+
+    // Update the HTML elements
+    document.getElementById('event').textContent = "Event: " + data.event;
+}
+
+// Call the function to update content immediately
+updateContent();
+
+// Set interval to refresh data every 24 hours (86400000 milliseconds)
+setInterval(updateContent, 10000);
+
+    </script>
 </body>
 </html>
