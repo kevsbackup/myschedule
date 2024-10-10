@@ -6,18 +6,22 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="todaydate">Today is Wednesday, Oct 9</h1>
+    <h1 id="todaydate">Today is <u id="date"></u></h1>
     <div id="events">
         <div id="privatelessons" class="eventclass">
-            <p id="event" class="event normal"><u>Event: Private Lessons</u></p>
-            <p id="time" class="time normal">Time: <u>3:45pm - 4:15pm</u></p>
-            <p id="pickuptime" class="time normal">Time To Pick Me Up: <u>4:30pm</u></p>
-            <p id="location" class="location normal">Where To Pick Me Up: <u>Salyards Middle School</u></p>
-            <p id="pickup" class="location normal">Pickup At: <u>DRIVE IN</u></p>
-            <p id="delays" class="delay normal">Will There Be Delays? <u><b>NO</b></u></p>
-            <p id="delays2" class="delay normal">If So, How Long? <u><b>5 Mins Max</b></u></p>
-            <p id="delays3" class="delay normal">Percentage of Delay? <u><b>10%</b></u></p>
+            <p class="event normal">Event: <u id="event"></u></p>
+            <p class="time normal">Time: <u id="time"></u></p>
+            <p class="time normal">Time To Pick Me Up: <u id="pickuptime"></u></p>
+            <p class="location normal">Where To Pick Me Up: <u id="location"></u></p>
+            <p class="location normal">Pickup At: <u id="pickup"></u></p>
+            <p class="delay normal">Will There Be Delays? <u><b id="delays"></b></u></p>
+            <p class="delay normal">If So, How Long? <u><b id="delays2"></b></u></p>
+            <p class="delay normal">Percentage of Delay? <u><b id="delays3"></b></u></p>
+            <p class="delay normal">Possibility To Be Early? <u><b id="delays4"></b></u></p>
+            <p class="delay normal">If So, How Early? <u><b id="delays5"></b></u></p>
+            <p class="delay normal percentage">Percentage of Early? <u><b id="delays6"></b></u></p>
         </div>
+        <br>
             <a id="tomorrow" href="index2.html">Tomorrow</a>
     </div>
     <style>
@@ -27,6 +31,7 @@
             color: white;
             opacity: 1;
         }
+
         #tomorrow:hover {
             opacity: 0.7;
             background-color: white;
@@ -56,8 +61,18 @@
     <script>
         // Example JSON data (this could be fetched from an API)
 const jsonData = { 
-    "event": "Sigma", 
-    "other": "other other" 
+    "date": "Thursday, Oct 10",
+    "event": "8th Grade Night", 
+    "time": "3:45pm - 9:30pm",
+    "pickuptime": "9:35pm",
+    "location": "Salyards Middle School",
+    "pickup": "DRIVE IN OR CURBSIDE",
+    "delays": "MAYBE",
+    "delays2": "5 Mins Max",
+    "delays3": "10%",
+    "delays4": "YES",
+    "delays5": "1-2 Hours Early",
+    "delays6": "5%"
 };
 
 // Function to update the HTML content
@@ -69,7 +84,18 @@ function updateContent() {
     const data = jsonData; // Replace this with the fetched data
 
     // Update the HTML elements
-    document.getElementById('event').textContent = "Event: " + data.event;
+    document.getElementById('date').textContent = data.date;
+    document.getElementById('event').textContent = data.event;
+    document.getElementById('time').textContent = data.time;
+    document.getElementById('pickuptime').textContent = data.pickuptime;
+    document.getElementById('location').textContent = data.location;
+    document.getElementById('pickup').textContent = data.pickup;
+    document.getElementById('delays').textContent = data.delays;
+    document.getElementById('delays2').textContent = data.delays2;
+    document.getElementById('delays3').textContent = data.delays3;
+    document.getElementById('delays4').textContent = data.delays4;
+    document.getElementById('delays5').textContent = data.delays5;
+    document.getElementById('delays6').textContent = data.delays6;
 }
 
 // Call the function to update content immediately
