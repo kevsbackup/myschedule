@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="todaydate">Today is <u id="date"></u></h1>
+    <div id="events">
+        <div id="privatelessons" class="eventclass">
+            <p class="event normal">Event: <u id="event"></u></p>
+        </div>
+        <br>
+    </div>
+    <style>
+        #tomorrow {
+            font-size: 20px;
+            font-family: "Arial";
+            color: white;
+            opacity: 1;
+        }
+
+        #tomorrow:hover {
+            opacity: 0.7;
+            background-color: white;
+            color: black;
+        }
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        #delays3 {
+            background-color: green;
+        }
+        
+        .normal {
+            font-family: "Arial";
+            font-size: 18px;
+        }
+
+        #todaydate {
+            color: white;
+            font-family: "Arial";
+            text-align: center;
+            font-size: 50px;
+        }
+    </style>
+    <script>
+        // Example JSON data (this could be fetched from an API)
+const jsonData = { 
+    "date": "Monday, Oct 14",
+    "event": "No events today", 
+    "time": "3:45pm - 9:30pm",
+    "pickuptime": "9:35pm",
+    "location": "Salyards Middle School",
+    "pickup": "DRIVE IN OR CURBSIDE",
+    "delays": "MAYBE",
+    "delays2": "5 Mins Max",
+    "delays3": "10%",
+    "delays4": "YES",
+    "delays5": "1-2 Hours Early",
+    "delays6": "5%"
+};
+
+// Function to update the HTML content
+function updateContent() {
+    // Here you would normally fetch data from an API
+    // For example: fetch('your-api-url').then(response => response.json()).then(data => { ... });
+
+    // Simulating the fetching of JSON data
+    const data = jsonData; // Replace this with the fetched data
+
+    // Update the HTML elements
+    document.getElementById('date').textContent = data.date;
+    document.getElementById('event').textContent = data.event;
+    document.getElementById('time').textContent = data.time;
+    document.getElementById('pickuptime').textContent = data.pickuptime;
+    document.getElementById('location').textContent = data.location;
+    document.getElementById('pickup').textContent = data.pickup;
+    document.getElementById('delays').textContent = data.delays;
+    document.getElementById('delays2').textContent = data.delays2;
+    document.getElementById('delays3').textContent = data.delays3;
+    document.getElementById('delays4').textContent = data.delays4;
+    document.getElementById('delays5').textContent = data.delays5;
+    document.getElementById('delays6').textContent = data.delays6;
+}
+
+// Call the function to update content immediately
+updateContent();
+
+// Set interval to refresh data every 24 hours (86400000 milliseconds)
+setInterval(updateContent, 10000);
+
+    </script>
+</body>
+</html>
